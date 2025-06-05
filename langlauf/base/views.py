@@ -47,12 +47,12 @@ def Distances(requests):
     context = {"distances": distances}
     return render(requests, "base/distance.html", context)
 
-def times_by_length(request):
-    length = request.GET.get('length', '15KM')
+def times_by_length(request, length):
+    length = request.GET.get('length', length)
     distance = get_object_or_404(Distance, length=length)
     times = Time.objects.filter(distance=distance)
 
-    return render(request, 'times_by_length.html', {
+    return render(request, 'base/times_by_length.html', {
         'times': times,
         'length': length,
     })
