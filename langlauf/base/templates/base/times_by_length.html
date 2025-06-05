@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Tijden voor {{ length }}</h1>
+
+  {% for time in times %}
+    <div>
+      <strong>Afstand:</strong> {{ time.distance.length }}<br>
+      <strong>Tijd:</strong> {{ time.time_in_minutes }} minuten<br>
+      <strong>Gebruiker:</strong> {{ time.user.username }}
+    </div>
+    <hr>
+  {% empty %}
+    <p>Geen tijden beschikbaar voor deze afstand.</p>
+  {% endfor %}
+{% endblock %}

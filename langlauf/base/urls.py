@@ -6,5 +6,6 @@ urlpatterns = [
                 path("hello/", views.say_hello, name= "hello"),
                 path("voornaam/", views.say_voornaam, name = "voornaam"),
                 path("medal/<str:color>/", views.medalpage, name = "medal"),
-                path("distances/", views.Distances, name= "Distances")
+                path("distances/", views.Distances, name= "Distances"),
+                path('tijden/', views.times_by_length, name='times_by_length'),
                ]

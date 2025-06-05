@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import  HttpResponse
-from .models import Distance
+from .models import Distance, Time
+from django.shortcuts import render, get_object_or_404
 
 def say_hello(request):
     return render(request, "base/hello.html")
@@ -45,3 +46,13 @@ def Distances(requests):
     distances = Distance.objects.all()
     context = {"distances": distances}
     return render(requests, "base/distance.html", context)
+
+def times_by_length(request):
+    length = request.GET.get('length', '15KM')
+    distance = get_object_or_404(Distance, length=length)
+    times = Time.objects.filter(distance=distance)
+
+    return render(request, 'times_by_length.html', {
+        'times': times,
+        'length': length,
+    })
