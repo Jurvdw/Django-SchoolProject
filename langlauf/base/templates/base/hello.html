@@ -1,0 +1,7 @@
+{% {% extends "base/base.html" %}%}
+
+{% block content %}
+    <h1> Hello World </h1>
+    <a href="{% url "voornaam" %}">Dit is mijn naam!</a><br>
+    <a href="{% url "winnaars" %}">Dit zijn de medaillewinnaars!<a/><br>
+{% endblock content %}

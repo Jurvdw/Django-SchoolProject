@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <h1>{{ medal }} Medal Winner</h1>
+
+    <p><strong>Name:</strong> {{ winner.Name }}</p>
+    <p><strong>Country:</strong> {{ winner.Country }}</p>
+    <p><strong>Time:</strong> {{ winner.Time }}</p>
+{% endblock content %}

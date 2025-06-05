@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>All distances<h1>
+    {% for distance in distances %}
+        <strong length: </strong> {{ distance.length }}><br>
+        <strong Full name:> </strong> {{distance.full_name }}<br>
+    {%endfor%}
+{% endblock content %}

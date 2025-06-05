@@ -1,0 +1,8 @@
+{% load static %}
+
+<div class="nav-container">
+    <img src="{% static "base/img/logo.png" %}" alt = "logo">
+    <a href="{% url "index" %}">LanglaufVereninging De Lange Lat</a>
+    <a href="{% url "index" %}">home</a>
+    <a href="{% url "medal" "gold" %}">Gold winner</a>
+</div>

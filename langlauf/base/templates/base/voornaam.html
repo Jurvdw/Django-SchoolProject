@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <h1>Hello {{ first_name|upper }} {{last_name}} {{age}}</h1>
+    {% if age >= 18 %}
+        Jij mag alcohol
+    {% else %}
+        Jij mag geen alcohol
+    {% endif %}
+{% endblock content %}
